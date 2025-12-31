@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartFin Analytics - Case Study | Abdullahi Ahmad</title>
+    <meta
+      name="description"
+      content="Case study of SmartFin Analytics, a Multi-Agent Financial Analysis System built with LangGraph."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1e40af;
+        --secondary: #475569;
+        --bg-body: #ffffff;
+        --bg-surface: #f8fafc;
+        --bg-surface-2: #f1f5f9;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --container-width: 900px; /* Narrower for reading */
+        --header-height: 80px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-body: #0f172a;
+          --bg-surface: #1e293b;
+          --bg-surface-2: #334155;
+          --text-main: #f8fafc;
+          --text-muted: #94a3b8;
+          --border: #334155;
+        }
+      }
+
+      /* Manual Dark Mode Overrides */
+      [data-theme="dark"] {
+        --bg-body: #0f172a;
+        --bg-surface: #1e293b;
+        --bg-surface-2: #334155;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --border: #334155;
+      }
+
+      [data-theme="light"] {
+        --bg-body: #ffffff;
+        --bg-surface: #f8fafc;
+        --bg-surface-2: #f1f5f9;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        line-height: 1.7;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 700;
+        color: var(--text-main);
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        border-radius: var(--radius-md);
+      }
+
+      .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Nav */
+      .navbar {
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+      .back-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        color: var(--text-muted);
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: var(--primary);
+      }
+
+      /* Content */
+      .case-header {
+        padding: 80px 0 40px;
+        text-align: center;
+      }
+      .case-title {
+        font-size: 3rem;
+        margin-bottom: 16px;
+        line-height: 1.1;
+      }
+      .case-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        margin-bottom: 32px;
+      }
+
+      .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 24px;
+        margin-bottom: 60px;
+        padding: 24px;
+        background: var(--bg-surface);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
+        text-align: left;
+      }
+      .meta-item h4 {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+      }
+      .meta-item p {
+        font-weight: 600;
+      }
+
+      .content-section {
+        margin-bottom: 60px;
+      }
+      .content-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 24px;
+      }
+      .content-section p {
+        margin-bottom: 16px;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+      .content-section ul {
+        padding-left: 24px;
+        margin-bottom: 24px;
+        color: var(--text-muted);
+      }
+      .content-section li {
+        margin-bottom: 12px;
+      }
+
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .tech-badge {
+        padding: 8px 16px;
+        background: var(--bg-surface-2);
+        border-radius: 20px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border: 1px solid var(--border);
+      }
+
+      .cta-section {
+        text-align: center;
+        padding: 80px 0;
+        border-top: 1px solid var(--border);
+        margin-top: 80px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 32px;
+        background: var(--text-main);
+        color: var(--bg-body);
+        border-radius: 50px;
+        font-weight: 600;
+        transition: transform 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        background: var(--primary);
+        color: white;
+      }
+
+      /* Dark Mode Toggle */
+      .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-main);
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background 0.3s;
+      }
+      .theme-toggle:hover {
+        background: var(--bg-surface-2);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="back-link"
+          ><i class="fas fa-arrow-left"></i> Back to Portfolio</a
+        >
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle Dark Mode"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="case-header">
+        <h1 class="case-title">SmartFin Analytics</h1>
+        <p class="case-subtitle">
+          Multi-Agent Financial Analysis System using LangGraph
+        </p>
+      </header>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>Role</h4>
+          <p>Lead AI Engineer</p>
+        </div>
+        <div class="meta-item">
+          <h4>Timeline</h4>
+          <p>Sept 2025 (4 Weeks)</p>
+        </div>
+        <div class="meta-item">
+          <h4>Tech Stack</h4>
+          <p>LangGraph, Python, Flask</p>
+        </div>
+        <div class="meta-item">
+          <h4>Outcome</h4>
+          <p>Automated Risk Analysis</p>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>The Challenge</h2>
+        <p>
+          Financial analysts spend hours manually aggregating data from various
+          sources to assess risk and detect fraud. The goal was to automate this
+          workflow using a Multi-Agent System that could autonomously gather
+          data, analyze patterns, and generate reports.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Solution</h2>
+        <p>
+          I designed <strong>SmartFin Analytics</strong>, a system powered by
+          <strong>LangGraph</strong> that orchestrates multiple AI agents. Each
+          agent has a specific role:
+        </p>
+        <ul>
+          <li>
+            <strong>Data Collector Agent:</strong> Scrapes and aggregates
+            financial data.
+          </li>
+          <li>
+            <strong>Analysis Agent:</strong> Uses
+            <strong>Isolation Forest</strong> for anomaly detection to flag
+            potential fraud.
+          </li>
+          <li>
+            <strong>Forecasting Agent:</strong> Utilizes
+            <strong>Prophet</strong> for time-series forecasting of financial
+            trends.
+          </li>
+          <li>
+            <strong>Reporting Agent:</strong> Synthesizes findings into a
+            natural language report.
+          </li>
+        </ul>
+        <p>
+          The system is wrapped in a responsive <strong>Flask</strong> web
+          interface with <strong>Tailwind CSS</strong> and interactive
+          <strong>Plotly</strong> visualizations for the end-user.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Key Technologies</h2>
+        <div class="tech-stack">
+          <span class="tech-badge">LangGraph</span>
+          <span class="tech-badge">LangChain</span>
+          <span class="tech-badge">OpenAI API</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">Scikit-Learn</span>
+          <span class="tech-badge">Prophet</span>
+          <span class="tech-badge">Tailwind CSS</span>
+        </div>
+      </section>
+
+      <div class="cta-section">
+        <h2>Ready to build something similar?</h2>
+        <br />
+        <a href="index.html#contact" class="btn">Contact Me</a>
+      </div>
+    </main>
+
+    <script>
+      // Dark Mode Logic
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      const icon = themeToggle.querySelector("i");
+
+      // Check local storage or system preference
+      const savedTheme = localStorage.getItem("theme");
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+
+      const applyTheme = (theme) => {
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        if (theme === "dark") {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      };
+
+      // Initialize
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else {
+        applyTheme(systemTheme);
+      }
+
+      // Toggle
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+      });
+    </script>
+  </body>
+</html>

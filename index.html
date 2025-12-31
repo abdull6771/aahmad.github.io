@@ -1,14 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abdullahi Ahmad - AI Research Engineer</title>
+    <title>Abdullahi Ahmad | AI Research Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Abdullahi Ahmad, an AI Research Engineer and Machine Learning Specialist specializing in RAG, LLMs, and Computer Vision."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aahmad.github.io/" />
+    <meta
+      property="og:title"
+      content="Abdullahi Ahmad | AI Research Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Specializing in RAG, LLMs, and Computer Vision. View my portfolio and projects."
+    />
+    <meta property="og:image" content="picture.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aahmad.github.io/" />
+    <meta
+      property="twitter:title"
+      content="Abdullahi Ahmad | AI Research Engineer"
+    />
+    <meta
+      property="twitter:description"
+      content="Specializing in RAG, LLMs, and Computer Vision. View my portfolio and projects."
+    />
+    <meta property="twitter:image" content="picture.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
     <style>
+      :root {
+        /* Color Palette - Neo-Minimalist Professional */
+        --primary: #2563eb; /* Royal Blue */
+        --primary-dark: #1e40af;
+        --secondary: #475569; /* Slate 600 */
+        --bg-body: #ffffff;
+        --bg-surface: #f8fafc; /* Slate 50 */
+        --bg-surface-2: #f1f5f9; /* Slate 100 */
+        --text-main: #0f172a; /* Slate 900 */
+        --text-muted: #64748b; /* Slate 500 */
+        --border: #e2e8f0; /* Slate 200 */
+        --accent: #8b5cf6; /* Violet */
+
+        /* Spacing & Layout */
+        --container-width: 1100px;
+        --header-height: 80px;
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
+      /* Dark Mode Variables */
+      [data-theme="dark"] {
+        --bg-body: #0f172a; /* Slate 900 */
+        --bg-surface: #1e293b; /* Slate 800 */
+        --bg-surface-2: #334155; /* Slate 700 */
+        --text-main: #f8fafc; /* Slate 50 */
+        --text-muted: #94a3b8; /* Slate 400 */
+        --border: #334155; /* Slate 700 */
+      }
+
+      /* Reset & Base */
       * {
         margin: 0;
         padding: 0;
@@ -16,1249 +94,1671 @@
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-main);
         line-height: 1.6;
-        color: #333;
-        background-color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Header */
-      header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 2rem 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .header-content {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .profile-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-        margin: 0 auto;
-        border: 4px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .header-text h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Plus Jakarta Sans", sans-serif;
         font-weight: 700;
+        line-height: 1.2;
+        color: var(--text-main);
       }
 
-      .header-text .subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-        opacity: 0.9;
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s ease;
       }
 
-      .contact-info {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        margin-top: 1rem;
+      ul {
+        list-style: none;
       }
 
-      .contact-item {
-        display: flex;
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Utilities */
+      .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .section {
+        padding: 100px 0;
+      }
+
+      .text-primary {
+        color: var(--primary);
+      }
+
+      .text-muted {
+        color: var(--text-muted);
+      }
+
+      .btn {
+        display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--text-main);
+        color: var(--bg-body);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .btn-outline {
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text-main);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--text-main);
+        background: var(--bg-surface);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        background-color: var(--bg-surface-2);
+        color: var(--text-main);
+        border: 1px solid var(--border);
       }
 
       /* Navigation */
-      nav {
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        position: sticky;
+      .navbar {
+        position: fixed;
         top: 0;
-        z-index: 100;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 1000;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      [data-theme="dark"] .navbar {
+        background: rgba(15, 23, 42, 0.8);
+      }
+
+      .navbar.scrolled {
+        border-bottom: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      [data-theme="dark"] .navbar.scrolled {
+        background: rgba(15, 23, 42, 0.95);
       }
 
       .nav-container {
         display: flex;
-        justify-content: center;
-        padding: 1rem 0;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+      }
+
+      .logo {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        letter-spacing: -0.5px;
       }
 
       .nav-links {
         display: flex;
-        list-style: none;
-        gap: 2rem;
+        gap: 32px;
+        align-items: center;
       }
 
-      .nav-links a {
-        text-decoration: none;
-        color: #333;
+      .nav-link {
+        font-size: 0.95rem;
         font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 25px;
-        transition: all 0.3s ease;
+        color: var(--text-muted);
+        position: relative;
       }
 
-      .nav-links a:hover,
-      .nav-links a.active {
-        background: #667eea;
-        color: white;
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--text-main);
       }
 
-      /* Main Content */
-      main {
-        padding: 3rem 0;
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
       }
 
-      .section {
-        margin-bottom: 4rem;
-        background: white;
-        padding: 2.5rem;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-main);
+        cursor: pointer;
+      }
+
+      /* Theme Toggle */
+      .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-main);
+        cursor: pointer;
+        font-size: 1.1rem;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .theme-toggle:hover {
+        background: var(--bg-surface-2);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding-top: 160px;
+        padding-bottom: 100px;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: 4rem;
+        letter-spacing: -1.5px;
+        margin-bottom: 24px;
+        background: linear-gradient(
+          135deg,
+          var(--text-main) 0%,
+          var(--text-muted) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-text .subtitle {
+        font-size: 1.5rem;
+        color: var(--text-muted);
+        margin-bottom: 32px;
+        font-weight: 400;
+      }
+
+      .hero-text .bio-snippet {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 40px;
+        max-width: 500px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero-image-wrapper {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        aspect-ratio: 1;
+        max-width: 400px;
+        margin-left: auto;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .hero-image-wrapper:hover .hero-image {
+        transform: scale(1.05);
+      }
+
+      /* Section Headers */
+      .section-header {
+        margin-bottom: 60px;
+        max-width: 600px;
       }
 
       .section-title {
-        font-size: 2.2rem;
-        color: #667eea;
-        margin-bottom: 2rem;
-        text-align: center;
-        position: relative;
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        letter-spacing: -1px;
       }
 
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: #667eea;
-        border-radius: 2px;
-      }
-
-      /* About Section */
-      .about-content {
-        font-size: 1.1rem;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .research-interests {
-        background: #f1f5f9;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-        text-align: center;
-      }
-
-      .research-interests h3 {
-        color: #667eea;
-        margin-bottom: 1rem;
-      }
-
-      /* Education Section */
-      .education-item {
-        border-left: 4px solid #667eea;
-        padding-left: 2rem;
-        margin-bottom: 2rem;
-        position: relative;
-      }
-
-      .education-item::before {
-        content: "";
-        position: absolute;
-        left: -8px;
-        top: 0;
-        width: 12px;
-        height: 12px;
-        background: #667eea;
-        border-radius: 50%;
-      }
-
-      .education-item h3 {
-        color: #333;
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .education-meta {
-        color: #666;
-        font-style: italic;
-        margin-bottom: 0.5rem;
-      }
-
-      .education-details {
-        color: #555;
-      }
-
-      /* Experience Section */
-      .experience-item {
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .experience-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .experience-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 1rem;
-      }
-
-      .experience-title {
-        font-size: 1.4rem;
-        color: #333;
-        margin-bottom: 0.3rem;
-      }
-
-      .experience-company {
-        color: #667eea;
+      .section-subtitle {
+        color: var(--primary);
         font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        display: block;
       }
 
-      .experience-date {
-        color: #666;
-        font-size: 0.9rem;
-        background: #f1f5f9;
-        padding: 0.3rem 0.8rem;
-        border-radius: 15px;
-      }
-
-      .experience-description ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .experience-description li {
-        margin-bottom: 0.8rem;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .experience-description li::before {
-        content: "▸";
-        position: absolute;
-        left: 0;
-        color: #667eea;
-        font-weight: bold;
-      }
-
-      /* Projects Section */
-      .projects-grid {
+      /* Skills Grid */
+      .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
       }
 
-      .project-card {
-        background: #f8fafc;
-        border-radius: 15px;
-        padding: 2rem;
-        border: 1px solid #e2e8f0;
+      .skill-card {
+        background: var(--bg-surface);
+        padding: 24px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
         transition: all 0.3s ease;
       }
 
-      .project-card:hover {
+      .skill-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
       }
 
-      .project-title {
-        font-size: 1.3rem;
-        color: #333;
-        margin-bottom: 1rem;
+      .skill-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
 
-      .project-date {
-        color: #667eea;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-      }
-
-      .project-description ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .project-description li {
-        margin-bottom: 0.5rem;
-        padding-left: 1.2rem;
-        position: relative;
-        font-size: 0.95rem;
-      }
-
-      .project-description li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: #667eea;
-      }
-
-      /* Skills Section */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .skill-category {
-        background: #f8fafc;
-        padding: 2rem;
-        border-radius: 15px;
-        border: 1px solid #e2e8f0;
-      }
-
-      .skill-category h3 {
-        color: #667eea;
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
+      .skill-card h3 i {
+        color: var(--primary);
       }
 
       .skill-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.8rem;
+        gap: 8px;
       }
 
-      .skill-tag {
-        background: white;
-        color: #333;
-        padding: 0.5rem 1rem;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        border: 1px solid #e2e8f0;
+      /* Experience Timeline */
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: var(--border);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 40px;
+        padding-bottom: 48px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        top: 6px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--bg-body);
+        border: 3px solid var(--primary);
+      }
+
+      .timeline-content {
+        background: var(--bg-surface);
+        padding: 24px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
         transition: all 0.3s ease;
       }
 
-      .skill-tag:hover {
-        background: #667eea;
-        color: white;
+      .timeline-content:hover {
+        box-shadow: var(--shadow-md);
       }
 
-      /* Awards Section */
-      .awards-list {
-        list-style: none;
-      }
-
-      .award-item {
-        background: #f8fafc;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-        border-left: 4px solid #fbbf24;
+      .timeline-header {
         display: flex;
-        align-items: center;
-        gap: 1rem;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
-      .award-icon {
-        font-size: 2rem;
-        color: #fbbf24;
+      .timeline-role {
+        font-size: 1.2rem;
+        font-weight: 700;
       }
 
-      .award-text {
+      .timeline-company {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .timeline-date {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        background: var(--bg-surface-2);
+        padding: 4px 12px;
+        border-radius: 20px;
+      }
+
+      .timeline-list {
+        margin-top: 16px;
+        padding-left: 20px;
+      }
+
+      .timeline-list li {
+        list-style-type: disc;
+        margin-bottom: 8px;
+        color: var(--text-muted);
+      }
+
+      /* Projects Grid */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 32px;
+      }
+
+      .project-card {
+        background: var(--bg-surface);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .project-content {
+        padding: 32px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .project-icon {
+        font-size: 1.5rem;
+        color: var(--text-muted);
+        transition: color 0.3s ease;
+      }
+
+      .project-card:hover .project-icon {
+        color: var(--primary);
+      }
+
+      .project-desc {
+        color: var(--text-muted);
+        margin-bottom: 24px;
+        font-size: 0.95rem;
         flex: 1;
       }
 
-      .award-title {
+      .project-desc ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+
+      .project-desc li {
+        list-style-type: disc;
+        margin-bottom: 4px;
+      }
+
+      .project-footer {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .project-date {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* Blog / Notes Section */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+      }
+
+      .blog-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        transition: all 0.3s ease;
+      }
+
+      .blog-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+      }
+
+      .blog-date {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .blog-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .blog-excerpt {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+      }
+
+      .blog-link {
+        color: var(--primary);
         font-weight: 600;
-        color: #333;
-        margin-bottom: 0.3rem;
-      }
-
-      .award-date {
-        color: #666;
         font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
       }
 
-      /* Publications Section */
-      .publication-item {
-        background: #f8fafc;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-        border-left: 4px solid #10b981;
+      /* Awards & Publications */
+      .list-grid {
+        display: grid;
+        gap: 24px;
       }
 
-      .publication-title {
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 0.5rem;
+      .list-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 24px;
+        background: var(--bg-surface);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
       }
 
-      .publication-authors {
-        color: #667eea;
-        font-style: italic;
-        margin-bottom: 0.3rem;
+      .list-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--bg-surface-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.2rem;
+        flex-shrink: 0;
       }
 
-      .publication-details {
-        color: #666;
+      .list-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+      }
+
+      .list-meta {
         font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 8px;
       }
 
-      /* Contact Section */
+      /* Contact */
+      .contact-section {
+        background: var(--bg-surface);
+        border-radius: var(--radius-lg);
+        padding: 60px;
+        text-align: center;
+        border: 1px solid var(--border);
+      }
+
       .contact-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        text-align: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-top: 40px;
       }
 
-      .contact-card {
-        background: #f8fafc;
-        padding: 2rem;
-        border-radius: 15px;
-        border: 1px solid #e2e8f0;
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
       }
 
-      .contact-icon {
-        font-size: 2.5rem;
-        color: #667eea;
-        margin-bottom: 1rem;
-      }
-
-      .contact-card h3 {
-        color: #333;
-        margin-bottom: 0.5rem;
-      }
-
-      .contact-card p {
-        color: #666;
-      }
-
-      .contact-card a {
-        color: #667eea;
-        text-decoration: none;
-      }
-
-      .contact-card a:hover {
-        text-decoration: underline;
+      .contact-icon-lg {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: var(--bg-body);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: var(--primary);
+        box-shadow: var(--shadow-md);
       }
 
       /* Footer */
       footer {
-        background: #1f2937;
-        color: white;
+        padding: 60px 0;
         text-align: center;
-        padding: 2rem 0;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border);
+        margin-top: 100px;
       }
 
-      /* Responsive Design */
+      /* Chat Widget */
+      .chat-widget {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+      }
+
+      .chat-toggle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        border: none;
+        box-shadow: var(--shadow-lg);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+      }
+
+      .chat-toggle:hover {
+        transform: scale(1.1);
+      }
+
+      .chat-window {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 350px;
+        height: 500px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .chat-header {
+        background: var(--primary);
+        color: white;
+        padding: 16px;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .message {
+        max-width: 80%;
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+      }
+
+      .message.bot {
+        background: var(--bg-surface-2);
+        color: var(--text-main);
+        align-self: flex-start;
+        border-bottom-left-radius: 2px;
+      }
+
+      .message.user {
+        background: var(--primary);
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 2px;
+      }
+
+      .chat-input-area {
+        padding: 16px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 8px;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 8px 12px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: var(--bg-body);
+        color: var(--text-main);
+        outline: none;
+      }
+
+      .chat-send {
+        background: none;
+        border: none;
+        color: var(--primary);
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+
+      /* Responsive */
       @media (max-width: 768px) {
-        .header-content {
+        .hero-content {
           grid-template-columns: 1fr;
           text-align: center;
+          gap: 40px;
         }
 
-        .header-text h1 {
-          font-size: 2.2rem;
+        .hero-text h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .hero-image-wrapper {
+          margin: 0 auto;
+          max-width: 300px;
         }
 
         .nav-links {
-          flex-wrap: wrap;
-          gap: 1rem;
+          display: none;
         }
 
-        .experience-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0.5rem;
+        .mobile-menu-btn {
+          display: block;
         }
 
-        .projects-grid {
-          grid-template-columns: 1fr;
+        .timeline::before {
+          left: 20px;
         }
 
-        .skills-grid {
-          grid-template-columns: 1fr;
+        .timeline-item {
+          padding-left: 50px;
         }
-      }
 
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Animation for sections */
-      .section {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.8s ease forwards;
-      }
-
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
+        .timeline-item::before {
+          left: 14px;
         }
-      }
 
-      .section:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .section:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .section:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .section:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .section:nth-child(5) {
-        animation-delay: 0.5s;
-      }
-      .section:nth-child(6) {
-        animation-delay: 0.6s;
+        .chat-window {
+          width: 300px;
+          right: -20px;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <div class="header-content">
-          <div class="profile-image">
-            <img
-              src="picture.png"
-              alt="Profile Picture"
-              style="
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 50%;
-              "
-            />
-          </div>
-          <div class="header-text">
-            <h1>Abdullahi Ahmad</h1>
-            <p class="subtitle">
-              AI Research Engineer & Machine Learning Specialist
-            </p>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>abdulll8392@gmail.com</span>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Babura, Jigawa, Nigeria</span>
-              </div>
-              <div class="contact-item">
-                <i class="fab fa-github"></i>
-                <span>abdull6771</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <!-- Navigation -->
-    <nav>
-      <div class="container">
-        <div class="nav-container">
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">Abdullahi.</a>
+        <div style="display: flex; align-items: center; gap: 20px">
           <ul class="nav-links">
             <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#awards" class="nav-link">Awards</a></li>
-            <li><a href="#publications" class="nav-link">Publications</a></li>
+            <li><a href="#notes" class="nav-link">Notes</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle Dark Mode"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
       </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container">
-      <!-- About Section -->
-      <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <p>
-            Innovative Computer Engineer with a Second Class Upper degree from
-            Ahmadu Bello University, Zaria, Nigeria, and 4+ years of experience
-            in Machine Learning and Generative AI. Passionate about advancing
-            artificial intelligence research and development, with expertise in
-            building Retrieval-Augmented Generation (RAG) applications,
-            Langchain, and LangGraph for workflow automation.
+    <!-- Hero Section -->
+    <header class="hero container" id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="badge">Available for opportunities</span>
+          <h1>AI Research Engineer & Machine Learning Specialist</h1>
+          <p class="subtitle">
+            Building the future of intelligent systems with RAG, LLMs, and
+            Computer Vision.
           </p>
+          <p class="bio-snippet">
+            Innovative Computer Engineer with expertise in building
+            Retrieval-Augmented Generation (RAG) applications, Langchain, and
+            LangGraph for workflow automation.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Work</a>
+            <a
+              href="Abdullahi_Ahmad_Resume.pdf"
+              target="_blank"
+              class="btn btn-outline"
+              ><i class="fas fa-download"></i> Download Resume</a
+            >
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="picture.png" alt="Abdullahi Ahmad" class="hero-image" />
+        </div>
+      </div>
+    </header>
 
-          <p>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">About Me</span>
+          <h2 class="section-title">Engineering Intelligence</h2>
+          <p class="text-muted">
+            I am a Computer Engineer with a Second Class Upper degree from
+            Ahmadu Bello University, Zaria, Nigeria, and 4+ years of experience
+            in Machine Learning and Generative AI.
+          </p>
+        </div>
+        <div style="max-width: 800px">
+          <p class="text-muted" style="margin-bottom: 20px">
             Winner of the 2023 Global Huawei ICT Competition, I have gained
             hands-on experience in configuring CCTV, biometric systems, and
             enterprise networking equipment during my Network Engineering
             Internship. I am highly motivated to contribute to cutting-edge
             research in AI and Computer Vision.
           </p>
-
-          <div class="research-interests">
-            <h3><i class="fas fa-brain"></i> Research Interests</h3>
-            <p>
-              Machine Learning, Retrieval Augmented Generation, and Large
-              Language Models
-            </p>
+          <div class="badge" style="font-size: 1rem; padding: 12px 24px">
+            <i class="fas fa-brain" style="margin-right: 8px"></i>
+            Research Interests: Machine Learning, RAG, Large Language Models
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Education Section -->
-      <section id="education" class="section">
-        <h2 class="section-title">Education</h2>
-
-        <div class="education-item">
-          <h3>BEng Computer Engineering</h3>
-          <div class="education-meta">
-            Ahmadu Bello University, Zaria, Nigeria | Oct 2018 - Nov 2024
-          </div>
-          <div class="education-details">
-            <p><strong>CGPA:</strong> 3.69/5.00 (Upper Second Class)</p>
-            <p><strong>Supervisor:</strong> Prof. Muhammad Bashir Muazu</p>
-          </div>
+    <!-- Skills Section -->
+    <section
+      id="skills"
+      class="section"
+      style="background-color: var(--bg-surface-2)"
+    >
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Expertise</span>
+          <h2 class="section-title">Technical Arsenal</h2>
         </div>
-
-        <div class="education-item">
-          <h3>Diploma in Computer Engineering</h3>
-          <div class="education-meta">
-            Institute of Computing and ICT, Ahmadu Bello University | Aug 2016 -
-            Nov 2018
-          </div>
-          <div class="education-details">
-            <p><strong>CGPA:</strong> 3.52/4.00</p>
-            <p><strong>Supervisor:</strong> Mal. Nura Dari</p>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <h3>West African Secondary School Certificate (W.A.S.S.C.E)</h3>
-          <div class="education-meta">
-            Science Secondary School Lautai Gumel, Jigawa | Sept 2013 - July
-            2016
-          </div>
-        </div>
-
-        <div class="education-item">
-          <h3>Professional Certifications</h3>
-          <div class="education-details">
-            <ul>
-              <li>Huawei Certified Academy Instructor</li>
-              <li>
-                Huawei Certified ICT Professional - Artificial Intelligence
-              </li>
-              <li>Huawei Certified ICT Associate - Artificial Intelligence</li>
-              <li>Huawei Certified ICT Associate - Cloud Services</li>
-              <li>Coursera TensorFlow Developer Certificate</li>
-              <li>Deep Learning Specialisation by Prof Andrew NG (Coursera)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience" class="section">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Research Assistant</h3>
-              <p class="experience-company">
-                INCEIF University, Kuala Lumpur, Malaysia
-              </p>
-            </div>
-            <div class="experience-date">Sept 2025 - Present</div>
-          </div>
-          <div class="experience-description">
-            <ul>
-              <li>
-                Developed a Python automation script to download, rename, and
-                organize annual reports for publicly listed companies in
-                Malaysia
-              </li>
-              <li>
-                Utilized the Google Drive API via the PyDrive library to
-                programmatically upload and manage financial documents in a
-                structured cloud environment
-              </li>
-              <li>
-                Engineered a system to automatically parse URLs and file
-                metadata to standardize naming conventions, significantly
-                improving data retrieval and organization for research purposes
-              </li>
-              <li>
-                Developed an AI-driven data extraction system using LangChain
-                (RAG) and Gemini Pro to parse and structure the OIC Digital
-                Economy Index from a large document into a SQLite database
-              </li>
-              <li>
-                Built a multi-functional analytics dashboard using Streamlit and
-                Metabase, featuring a natural language (Text-to-SQL) query agent
-                and comparative visualizations
-              </li>
-              <li>
-                Enabled data-driven insights through interactive charts (Plotly,
-                Metabase) for country profiling, leaderboards, and geographic
-                analysis across 57 nations
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Machine Learning Engineer Intern</h3>
-              <p class="experience-company">Nafabat.AI, California, U.S.A</p>
-            </div>
-            <div class="experience-date">Jan 2023 - July 2025</div>
-          </div>
-          <div class="experience-description">
-            <ul>
-              <li>
-                Finetuned a large video dataset using LlamaVID to recognize
-                shoplifting using CCTV Camera
-              </li>
-              <li>Developed a RAG application to query InfluxDB data</li>
-              <li>
-                Developed an End-to-End Retrieval Augmented Generation
-                Application and deployed using Gradio
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Network Engineer Intern</h3>
-              <p class="experience-company">
-                Cosmopolitan University, Abuja, Nigeria
-              </p>
-            </div>
-            <div class="experience-date">Nov 2024 - Apr 2025</div>
-          </div>
-          <div class="experience-description">
-            <ul>
-              <li>
-                Installed and configured Dahua CCTV surveillance systems for key
-                locations including the library, main gate, and school
-                auditorium
-              </li>
-              <li>
-                Took inventory of equipment in the Computer Engineering Lab and
-                the School Maker Space
-              </li>
-              <li>
-                Configured network infrastructure for boys' and girls' student
-                hostels
-              </li>
-              <li>
-                Set up ZKTeco biometric systems for staff and student attendance
-                management
-              </li>
-              <li>
-                Configured Huawei AirEngine 5761R-11 for extended wireless
-                coverage
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">
-                NYSC Intern - Nigeria Government & Enterprise Key Account
-                Service Dept(Southern Africa Region)
-              </h3>
-              <p class="experience-company">Huawei Technologies, Nigeria</p>
-            </div>
-            <div class="experience-date">2024</div>
-          </div>
-          <div class="experience-description">
-            <ul>
-              <li>
-                Contributed as a team member in the setup and configuration of a
-                data centre for the Nigerian Customs Service
-              </li>
-              <li>
-                Configured Huawei Firewall, AntiDDoS, and FireHunter systems to
-                enhance security and performance
-              </li>
-              <li>
-                Performed regular troubleshooting and maintenance checkups for
-                data centres of UBEC, NERC, CBN, and FIRS
-              </li>
-              <li>
-                Conducted network security training for selected staff of the
-                Federal Ministry of Finance
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3 class="project-title">
-              SmartFin Analytics: Multi-Agent Financial Analysis System
-            </h3>
-            <p class="project-date">September 2025</p>
-            <div class="project-description">
-              <ul>
-                <li>
-                  Designed and implemented a multi-agent system using LangGraph
-                  for risk analysis, fraud detection, and financial planning
-                </li>
-                <li>
-                  Developed machine learning models, including Isolation Forest
-                  for anomaly detection and Prophet for time-series forecasting
-                </li>
-                <li>
-                  Built a responsive Flask web interface with Tailwind CSS and
-                  Plotly visualizations
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3 class="project-title">
-              End-to-End Customer Segmentation Strategy Platform
-            </h3>
-            <p class="project-date">Aug 2025 - Sep 2025</p>
-            <div class="project-description">
-              <ul>
-                <li>
-                  Developed a complete customer analytics platform in Python to
-                  segment customers and drive targeted marketing strategies
-                </li>
-                <li>
-                  Engineered an unsupervised clustering model (K-Means) to
-                  identify 5 distinct customer personas
-                </li>
-                <li>
-                  Built and deployed a predictive model (Random Forest) with
-                  95%+ accuracy
-                </li>
-                <li>
-                  Created a multi-page interactive dashboard using Streamlit
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3 class="project-title">AI-Powered Phishing Email Detector</h3>
-            <p class="project-date">September 2025</p>
-            <div class="project-description">
-              <ul>
-                <li>
-                  Developed a complete machine learning pipeline to classify
-                  emails as "Phishing" or "Safe"
-                </li>
-                <li>
-                  Engineered advanced text and metadata features achieving over
-                  99% accuracy
-                </li>
-                <li>
-                  Built and deployed an interactive web application using
-                  Streamlit
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3 class="project-title">SmartWaste AI Robot</h3>
-            <p class="project-date">March 2023 - July 2023</p>
-            <div class="project-description">
-              <ul>
-                <li>
-                  An AI robot that uses deep learning model to detect
-                  non-biodegradable waste
-                </li>
-                <li>Uses robotic arm to dispose the waste inside a bin</li>
-                <li>Spearheaded the development of SmartWaste prototype</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3 class="project-title">
-              Network Failure Prediction on CNFs 5GC with eBPF
-            </h3>
-            <p class="project-date">July 2022 - Aug 2022</p>
-            <div class="project-description">
-              <ul>
-                <li>
-                  Collaborated to propose a machine Learning Model to predict
-                  Network failure on CNFs 5G C
-                </li>
-                <li>Developed a model using Long Short Term Memory (LSTM)</li>
-                <li>Achieved an improved accuracy of 88.3%</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3 class="project-title">
-              NeuroScan: AI-Powered Brain Tumor Classification
-            </h3>
-            <p class="project-date">2024</p>
-            <div class="project-description">
-              <ul>
-                <li>
-                  AI-Powered Brain Tumor Classification Using Deep Learning
-                </li>
-                <li>Implemented advanced computer vision techniques</li>
-                <li>Achieved high accuracy in medical image classification</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card">
-            <h3 class="project-title">
-              AI-Powered Personal Calendar Assistant
-            </h3>
-            <p class="project-date">2025</p>
-            <div class="project-description">
-              <ul>
-                <li>
-                  AI-Powered Calendar Super-Assistant Using LangChain and OpenAI
-                </li>
-                <li>
-                  Implemented advanced natural language processing techniques
-                </li>
-                <li>
-                  Achieved high accuracy in task scheduling and management
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card">
-            <h3 class="project-title">
-              Intelligent PDF Summarizer Web Application
-            </h3>
-            <p class="project-date">2025</p>
-            <div class="project-description">
-              <ul>
-                <li>AI-Powered PDF Summarizer Using LangChain and OpenAI</li>
-                <li>
-                  Implemented advanced natural language processing techniques
-                </li>
-                <li>
-                  Achieved high accuracy in text summarization and document
-                  understanding
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="section">
-        <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
-          <div class="skill-category">
-            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skill-card">
+            <h3><i class="fas fa-code"></i> Languages</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">MATLAB</span>
-              <span class="skill-tag">LaTeX</span>
-              <span class="skill-tag">ROS</span>
+              <span class="badge">Python</span>
+              <span class="badge">MATLAB</span>
+              <span class="badge">LaTeX</span>
+              <span class="badge">ROS</span>
             </div>
           </div>
-
-          <div class="skill-category">
+          <div class="skill-card">
             <h3><i class="fas fa-brain"></i> ML Frameworks</h3>
             <div class="skill-tags">
-              <span class="skill-tag">MindSpore</span>
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">TensorFlow</span>
-              <span class="skill-tag">Keras</span>
-              <span class="skill-tag">Apache Spark</span>
-              <span class="skill-tag">Scikit-Learn</span>
-              <span class="skill-tag">XGBoost</span>
+              <span class="badge">MindSpore</span>
+              <span class="badge">PyTorch</span>
+              <span class="badge">TensorFlow</span>
+              <span class="badge">Keras</span>
+              <span class="badge">Scikit-Learn</span>
+              <span class="badge">XGBoost</span>
             </div>
           </div>
-
-          <div class="skill-category">
-            <h3><i class="fas fa-cloud"></i> Cloud Services</h3>
+          <div class="skill-card">
+            <h3><i class="fas fa-cloud"></i> Cloud & Data</h3>
             <div class="skill-tags">
-              <span class="skill-tag">GCP</span>
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">Microsoft Azure</span>
-              <span class="skill-tag">Huawei Cloud Platform</span>
+              <span class="badge">GCP</span>
+              <span class="badge">AWS</span>
+              <span class="badge">Azure</span>
+              <span class="badge">Huawei Cloud</span>
+              <span class="badge">Hadoop</span>
+              <span class="badge">Spark</span>
+              <span class="badge">MySQL</span>
             </div>
           </div>
-
-          <div class="skill-category">
-            <h3><i class="fas fa-database"></i> Big Data Tools</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Hadoop</span>
-              <span class="skill-tag">Apache Spark</span>
-              <span class="skill-tag">Apache Hive</span>
-              <span class="skill-tag">HBase</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">Huawei MapReduce Service</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
+          <div class="skill-card">
             <h3><i class="fas fa-microchip"></i> Hardware</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Raspberry Pi</span>
-              <span class="skill-tag">Arduino</span>
-              <span class="skill-tag">ESP32</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3><i class="fas fa-users"></i> Soft Skills</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Leadership</span>
-              <span class="skill-tag">Problem Solving</span>
-              <span class="skill-tag">Team Player</span>
-              <span class="skill-tag">Time Management</span>
-              <span class="skill-tag">Interpersonal Skills</span>
+              <span class="badge">Raspberry Pi</span>
+              <span class="badge">Arduino</span>
+              <span class="badge">ESP32</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Awards Section -->
-      <section id="awards" class="section">
-        <h2 class="section-title">Awards & Recognition</h2>
-        <div class="awards-list">
-          <div class="award-item">
-            <div class="award-icon">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <div class="award-text">
-              <div class="award-title">
-                Grand Prize Winner, Huawei ICT Competition Global Final -
-                Innovation/AI Track
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Career Path</span>
+          <h2 class="section-title">Professional Experience</h2>
+        </div>
+        <div class="timeline">
+          <!-- INCEIF -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Research Assistant</div>
+                  <div class="timeline-company">
+                    INCEIF University, Kuala Lumpur, Malaysia
+                  </div>
+                </div>
+                <div class="timeline-date">Sept 2025 - Present</div>
               </div>
-              <div class="award-date">May 2023</div>
+              <ul class="timeline-list">
+                <li>
+                  Developed a Python automation script to download, rename, and
+                  organize annual reports for publicly listed companies in
+                  Malaysia.
+                </li>
+                <li>
+                  Utilized Google Drive API to programmatically upload and
+                  manage financial documents.
+                </li>
+                <li>
+                  Engineered a system to automatically parse URLs and file
+                  metadata to standardize naming conventions.
+                </li>
+                <li>
+                  Developed an AI-driven data extraction system using LangChain
+                  (RAG) and Gemini Pro.
+                </li>
+                <li>
+                  Built a multi-functional analytics dashboard using Streamlit
+                  and Metabase with Text-to-SQL capabilities.
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="award-item">
-            <div class="award-icon">
-              <i class="fas fa-medal"></i>
-            </div>
-            <div class="award-text">
-              <div class="award-title">
-                Grand Prize, Huawei ICT Competition Regional Final (Southern
-                Africa) - Innovation/AI Track
+
+          <!-- Nafabat.AI -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">
+                    Machine Learning Engineer Intern
+                  </div>
+                  <div class="timeline-company">
+                    Nafabat.AI, California, U.S.A
+                  </div>
+                </div>
+                <div class="timeline-date">Jan 2023 - July 2025</div>
               </div>
-              <div class="award-date">March 2023</div>
+              <ul class="timeline-list">
+                <li>
+                  Finetuned a large video dataset using LlamaVID to recognize
+                  shoplifting using CCTV Camera.
+                </li>
+                <li>Developed a RAG application to query InfluxDB data.</li>
+                <li>
+                  Developed an End-to-End Retrieval Augmented Generation
+                  Application and deployed using Gradio.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cosmopolitan University -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Network Engineer Intern</div>
+                  <div class="timeline-company">
+                    Cosmopolitan University, Abuja, Nigeria
+                  </div>
+                </div>
+                <div class="timeline-date">Nov 2024 - Apr 2025</div>
+              </div>
+              <ul class="timeline-list">
+                <li>
+                  Installed and configured Dahua CCTV surveillance systems.
+                </li>
+                <li>
+                  Configured network infrastructure for student hostels and
+                  wireless coverage (Huawei AirEngine).
+                </li>
+                <li>
+                  Set up ZKTeco biometric systems for attendance management.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Huawei -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">
+                    NYSC Intern - Nigeria Government & Enterprise Key Account
+                    Service
+                  </div>
+                  <div class="timeline-company">
+                    Huawei Technologies, Nigeria
+                  </div>
+                </div>
+                <div class="timeline-date">2024</div>
+              </div>
+              <ul class="timeline-list">
+                <li>
+                  Contributed to the setup and configuration of a data centre
+                  for the Nigerian Customs Service.
+                </li>
+                <li>
+                  Configured Huawei Firewall, AntiDDoS, and FireHunter systems.
+                </li>
+                <li>
+                  Conducted network security training for staff of the Federal
+                  Ministry of Finance.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Publications Section -->
-      <section id="publications" class="section">
-        <h2 class="section-title">Publications & Research</h2>
-
-        <div class="publication-item">
-          <div class="publication-title">
-            An Artificial Intelligence Smart Waste Robot
-          </div>
-          <div class="publication-authors">Abdullahi, A. (2024)</div>
-          <div class="publication-details">
-            [Poster Presentation]. Department of Computer Engineering, Ahmadu
-            Bello University, Nigeria.
-          </div>
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="section"
+      style="background-color: var(--bg-surface-2)"
+    >
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
         </div>
-
-        <div class="publication-item">
-          <div class="publication-title">
-            Software Development Agent: An AI-Driven Framework for Automating
-            the Software Development Lifecycle
-          </div>
-          <div class="publication-authors">Abdullahi, A. (2024)</div>
-          <div class="publication-details">Unpublished Research</div>
-        </div>
-
-        <div class="publication-item">
-          <div class="publication-title">
-            NeuroScan: AI-Powered Brain Tumor Classification Using Deep Learning
-          </div>
-          <div class="publication-authors">Abdullahi, A. (2024)</div>
-          <div class="publication-details">Unpublished Research</div>
-        </div>
-
-        <div class="publication-item">
-          <div class="publication-title">
-            Developing an LLM-Powered Coding Agent with LangGraph: A Multi-Agent
-            Workflow for Code Generation and Analysis
-          </div>
-          <div class="publication-authors">Abdullahi, A. (2024)</div>
-          <div class="publication-details">Unpublished Research</div>
-        </div>
-
-        <div class="publication-item">
-          <div class="publication-title">
-            Heart Disease Classification Using Random Forest and Support Vector
-            Machine Algorithms
-          </div>
-          <div class="publication-authors">Abdullahi, A. (2024)</div>
-          <div class="publication-details">Unpublished Research</div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="section">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
+        <div class="projects-grid">
+          <!-- SmartFin -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">SmartFin Analytics</h3>
+                <a href="case-study-smartfin.html" class="project-icon"
+                  ><i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                Multi-Agent Financial Analysis System using LangGraph for risk
+                analysis and fraud detection.
+                <ul>
+                  <li>
+                    Implemented Isolation Forest for anomaly detection and
+                    Prophet for forecasting.
+                  </li>
+                  <li>
+                    Built responsive Flask web interface with Tailwind CSS.
+                  </li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">Sept 2025</span>
+                <span class="badge">LangGraph</span>
+              </div>
             </div>
-            <h3>Email</h3>
-            <p>
-              <a href="mailto:abdulll8392@gmail.com">abdulll8392@gmail.com</a>
+          </div>
+
+          <!-- Customer Segmentation -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Customer Segmentation Platform</h3>
+                <a href="#" class="project-icon"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                End-to-End analytics platform to segment customers and drive
+                marketing strategies.
+                <ul>
+                  <li>Unsupervised clustering (K-Means) for 5 personas.</li>
+                  <li>Predictive model (Random Forest) with 95%+ accuracy.</li>
+                  <li>Streamlit dashboard.</li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">Aug 2025</span>
+                <span class="badge">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phishing Detector -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">AI Phishing Detector</h3>
+                <a href="#" class="project-icon"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                Machine learning pipeline to classify emails as "Phishing" or
+                "Safe".
+                <ul>
+                  <li>99% accuracy with advanced text/metadata features.</li>
+                  <li>Interactive Streamlit web application.</li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">Sept 2025</span>
+                <span class="badge">NLP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SmartWaste -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">SmartWaste AI Robot</h3>
+                <a href="#" class="project-icon"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                AI robot using deep learning to detect non-biodegradable waste.
+                <ul>
+                  <li>Robotic arm for waste disposal.</li>
+                  <li>Spearheaded prototype development.</li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">2023</span>
+                <span class="badge">Robotics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Network Failure -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Network Failure Prediction</h3>
+                <a href="#" class="project-icon"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                ML Model to predict Network failure on CNFs 5G C.
+                <ul>
+                  <li>LSTM model with 88.3% accuracy.</li>
+                  <li>eBPF integration.</li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">2022</span>
+                <span class="badge">LSTM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NeuroScan -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">NeuroScan</h3>
+                <a href="#" class="project-icon"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                AI-Powered Brain Tumor Classification Using Deep Learning.
+                <ul>
+                  <li>Advanced computer vision techniques.</li>
+                  <li>High accuracy in medical image classification.</li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">2024</span>
+                <span class="badge">Computer Vision</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calendar Assistant -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Personal Calendar Assistant</h3>
+                <a href="#" class="project-icon"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                AI-Powered Calendar Super-Assistant Using LangChain and OpenAI.
+                <ul>
+                  <li>Advanced NLP for task scheduling.</li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">2025</span>
+                <span class="badge">LangChain</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PDF Summarizer -->
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">PDF Summarizer</h3>
+                <a href="#" class="project-icon"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+              <div class="project-desc">
+                Intelligent PDF Summarizer Web Application.
+                <ul>
+                  <li>Document understanding and summarization.</li>
+                </ul>
+              </div>
+              <div class="project-footer">
+                <span class="project-date">2025</span>
+                <span class="badge">OpenAI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Notes Section -->
+    <section id="notes" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Thoughts & Insights</span>
+          <h2 class="section-title">Technical Notes</h2>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <span class="blog-date">Dec 15, 2025</span>
+            <h3 class="blog-title">Optimizing RAG Pipelines with LangGraph</h3>
+            <p class="blog-excerpt">
+              How to reduce hallucination and improve retrieval accuracy in
+              complex multi-agent systems.
             </p>
+            <a href="#" class="blog-link"
+              >Read Note <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="blog-card">
+            <span class="blog-date">Nov 28, 2025</span>
+            <h3 class="blog-title">Fine-tuning LlamaVID for CCTV Analysis</h3>
+            <p class="blog-excerpt">
+              Lessons learned from training a vision-language model on
+              low-resolution security footage.
+            </p>
+            <a href="#" class="blog-link"
+              >Read Note <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="blog-card">
+            <span class="blog-date">Oct 10, 2025</span>
+            <h3 class="blog-title">The Future of AI Agents in Finance</h3>
+            <p class="blog-excerpt">
+              Why autonomous agents are the next frontier for fraud detection
+              and risk assessment.
+            </p>
+            <a href="#" class="blog-link"
+              >Read Note <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Awards -->
+    <section
+      id="awards"
+      class="section"
+      style="background-color: var(--bg-surface-2)"
+    >
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px">
+          <!-- Education -->
+          <div>
+            <div class="section-header">
+              <span class="section-subtitle">Academic Background</span>
+              <h2 class="section-title">Education</h2>
+            </div>
+            <div class="list-grid">
+              <div class="list-item">
+                <div class="list-icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="list-content">
+                  <h3>BEng Computer Engineering</h3>
+                  <div class="list-meta">
+                    Ahmadu Bello University | 2018 - 2024
+                  </div>
+                  <p class="text-muted">CGPA: 3.69/5.00 (Upper Second Class)</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="list-icon"><i class="fas fa-certificate"></i></div>
+                <div class="list-content">
+                  <h3>Diploma in Computer Engineering</h3>
+                  <div class="list-meta">
+                    Ahmadu Bello University | 2016 - 2018
+                  </div>
+                  <p class="text-muted">CGPA: 3.52/4.00</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
+          <!-- Awards -->
+          <div>
+            <div class="section-header">
+              <span class="section-subtitle">Recognition</span>
+              <h2 class="section-title">Awards</h2>
             </div>
-            <h3>GitHub</h3>
-            <p>
-              <a href="https://github.com/abdull6771" target="_blank"
+            <div class="list-grid">
+              <div class="list-item">
+                <div class="list-icon"><i class="fas fa-trophy"></i></div>
+                <div class="list-content">
+                  <h3>Grand Prize Winner</h3>
+                  <div class="list-meta">
+                    Huawei ICT Competition Global Final | May 2023
+                  </div>
+                  <p class="text-muted">Innovation/AI Track</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="list-icon"><i class="fas fa-medal"></i></div>
+                <div class="list-content">
+                  <h3>Grand Prize</h3>
+                  <div class="list-meta">
+                    Huawei ICT Competition Regional Final | March 2023
+                  </div>
+                  <p class="text-muted">Southern Africa Region</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Research</span>
+          <h2 class="section-title">Publications</h2>
+        </div>
+        <div class="list-grid">
+          <div class="list-item">
+            <div class="list-icon"><i class="fas fa-book"></i></div>
+            <div class="list-content">
+              <h3>An Artificial Intelligence Smart Waste Robot</h3>
+              <div class="list-meta">Abdullahi, A. (2024)</div>
+              <p class="text-muted">
+                [Poster Presentation]. Department of Computer Engineering, ABU
+                Zaria.
+              </p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="list-content">
+              <h3>Software Development Agent</h3>
+              <div class="list-meta">Abdullahi, A. (2024)</div>
+              <p class="text-muted">
+                AI-Driven Framework for Automating SDLC (Unpublished)
+              </p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="list-content">
+              <h3>NeuroScan: Brain Tumor Classification</h3>
+              <div class="list-meta">Abdullahi, A. (2024)</div>
+              <p class="text-muted">Deep Learning Approach (Unpublished)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class="section"
+      style="background-color: var(--bg-surface-2)"
+    >
+      <div class="container">
+        <div class="contact-section">
+          <h2 class="section-title">Let's Work Together</h2>
+          <p class="text-muted" style="max-width: 600px; margin: 0 auto">
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of your visions.
+          </p>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <div class="contact-icon-lg">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3>Email</h3>
+              <a href="mailto:abdulll8392@gmail.com" class="text-primary"
+                >abdulll8392@gmail.com</a
+              >
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-lg">
+                <i class="fab fa-github"></i>
+              </div>
+              <h3>GitHub</h3>
+              <a
+                href="https://github.com/abdull6771"
+                target="_blank"
+                class="text-primary"
                 >abdull6771</a
               >
-            </p>
-          </div>
-
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
             </div>
-            <h3>Location</h3>
-            <p>Babura, Jigawa, Nigeria</p>
-          </div>
-
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-graduation-cap"></i>
+            <div class="contact-item">
+              <div class="contact-icon-lg">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Location</h3>
+              <p class="text-muted">Babura, Jigawa, Nigeria</p>
             </div>
-            <h3>Professional Memberships</h3>
-            <p>
-              Nigerian Computer Society (NCS)<br />
-              Data Science Nigeria<br />
-              Nigerian Society of Engineers (NSE)
-            </p>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer>
       <div class="container">
-        <p>
-          &copy; 2024 Abdullahi Ahmad. All rights reserved. | AI Research
-          Engineer & Machine Learning Specialist
-        </p>
+        <p>&copy; 2025 Abdullahi Ahmad. All rights reserved.</p>
+        <div style="margin-top: 10px; font-size: 0.9rem">
+          <span class="badge">NCS</span>
+          <span class="badge">DSN</span>
+          <span class="badge">NSE</span>
+        </div>
       </div>
     </footer>
 
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <div class="chat-window" id="chat-window">
+        <div class="chat-header">
+          <span>Chat with my Resume</span>
+          <button
+            id="close-chat"
+            style="
+              background: none;
+              border: none;
+              color: white;
+              cursor: pointer;
+            "
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="message bot">
+            Hi! I'm Abdullahi's AI Assistant. Ask me about his skills,
+            experience, or projects!
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <input
+            type="text"
+            class="chat-input"
+            id="chat-input"
+            placeholder="Ask a question..."
+          />
+          <button class="chat-send" id="chat-send">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+      <button class="chat-toggle" id="chat-toggle">
+        <i class="fas fa-comment-alt"></i>
+      </button>
+    </div>
+
     <script>
-      // Smooth scrolling for navigation links
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetSection = document.querySelector(targetId);
-
-          if (targetSection) {
-            targetSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-
-          // Update active nav link
-          document
-            .querySelectorAll(".nav-link")
-            .forEach((l) => l.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
-
-      // Update active nav link on scroll
+      // Navbar Scroll Effect
       window.addEventListener("scroll", function () {
-        const sections = document.querySelectorAll(".section");
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        let current = "";
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-          }
-        });
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
       });
 
-      // Add animation delay to sections
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+      // Mobile Menu Toggle
+      const mobileBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileBtn.addEventListener("click", () => {
+        const isHidden =
+          navLinks.style.display === "none" || navLinks.style.display === "";
+        navLinks.style.display = isHidden ? "flex" : "none";
+        if (isHidden) {
+          navLinks.style.flexDirection = "column";
+          navLinks.style.position = "absolute";
+          navLinks.style.top = "80px";
+          navLinks.style.left = "0";
+          navLinks.style.width = "100%";
+          navLinks.style.background = "white";
+          navLinks.style.padding = "20px";
+          navLinks.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+        }
+      });
+
+      // Dark Mode Logic
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      const icon = themeToggle.querySelector("i");
+
+      // Check local storage or system preference
+      const savedTheme = localStorage.getItem("theme");
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+
+      const applyTheme = (theme) => {
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        if (theme === "dark") {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
       };
 
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = "running";
-          }
-        });
-      }, observerOptions);
+      // Initialize
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else {
+        applyTheme(systemTheme);
+      }
 
-      document.querySelectorAll(".section").forEach((section) => {
-        observer.observe(section);
+      // Toggle
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+      });
+
+      // Chat Widget Logic
+      const chatToggle = document.getElementById("chat-toggle");
+      const chatWindow = document.getElementById("chat-window");
+      const closeChat = document.getElementById("close-chat");
+      const chatInput = document.getElementById("chat-input");
+      const chatSend = document.getElementById("chat-send");
+      const chatMessages = document.getElementById("chat-messages");
+
+      chatToggle.addEventListener("click", () => {
+        chatWindow.style.display = "flex";
+        chatToggle.style.display = "none";
+      });
+
+      closeChat.addEventListener("click", () => {
+        chatWindow.style.display = "none";
+        chatToggle.style.display = "flex";
+      });
+
+      const addMessage = (text, sender) => {
+        const div = document.createElement("div");
+        div.classList.add("message", sender);
+        div.textContent = text;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      };
+
+      const handleChat = () => {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        addMessage(text, "user");
+        chatInput.value = "";
+
+        // Simple Keyword Matching (Mock AI)
+        setTimeout(() => {
+          const lowerText = text.toLowerCase();
+          let response =
+            "I'm a demo AI. Please contact Abdullahi for detailed inquiries.";
+
+          if (lowerText.includes("skill") || lowerText.includes("stack")) {
+            response =
+              "Abdullahi is expert in Python, RAG, LangChain, Computer Vision, and Cloud platforms like AWS and Huawei Cloud.";
+          } else if (
+            lowerText.includes("contact") ||
+            lowerText.includes("email")
+          ) {
+            response = "You can reach him at abdulll8392@gmail.com.";
+          } else if (
+            lowerText.includes("experience") ||
+            lowerText.includes("work")
+          ) {
+            response =
+              "He has experience at INCEIF University, Nafabat.AI, and Huawei Technologies.";
+          } else if (lowerText.includes("project")) {
+            response =
+              "Check out his SmartFin Analytics and AI Phishing Detector projects above!";
+          }
+
+          addMessage(response, "bot");
+        }, 500);
+      };
+
+      chatSend.addEventListener("click", handleChat);
+      chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") handleChat();
       });
     </script>
   </body>
