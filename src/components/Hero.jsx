@@ -37,7 +37,7 @@ export default function Hero() {
               View My Work
             </a>
             <a
-              href="Abdullahi_Ahmad_Resume.pdf"
+              href="/Abdullahi_Ahmad_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary btn-lg"
@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-image-wrapper">
-          <img src="picture.png" alt="Abdullahi Ahmad" className="hero-image" />
+          <img src="/picture.png" alt="Abdullahi Ahmad" className="hero-image" />
         </div>
       </div>
     </header>
