@@ -12,16 +12,19 @@ export default function Hero() {
 
           <div className="hero-heading-wrapper">
             <h1 className="hero-title">
-              <span className="title-role">AI Research Engineer</span>
-              <span className="title-separator">&</span>
-              <span className="title-specialty">ML Specialist</span>
+              <span className="title-line title-line-top">AI Research</span>
+              <span className="title-line title-line-bottom">Engineer.</span>
             </h1>
-            <p className="hero-tagline">
-              Building intelligent systems with{" "}
-              <span className="highlight-tech">RAG</span>,{" "}
-              <span className="highlight-tech">LLMs</span>, and{" "}
-              <span className="highlight-tech">Computer Vision</span>
-            </p>
+            <div className="hero-secondary-role">
+              <span className="role-slash">/</span>
+              <span className="role-name">ML Specialist</span>
+            </div>
+            <div className="hero-tech-row">
+              <span className="tech-chip">RAG</span>
+              <span className="tech-chip">LLMs</span>
+              <span className="tech-chip">Computer Vision</span>
+              <span className="tech-chip">LangChain</span>
+            </div>
           </div>
 
           <p className="hero-description">
@@ -63,7 +66,11 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-image-wrapper">
-          <img src="/picture.png" alt="Abdullahi Ahmad" className="hero-image" />
+          <img
+            src="/picture.png"
+            alt="Abdullahi Ahmad"
+            className="hero-image"
+          />
         </div>
       </div>
     </header>
