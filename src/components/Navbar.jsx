@@ -1,88 +1,63 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { cvUrl, profile } from "../data/profile";
+
+const navigation = [
+  { label: "Work", hash: "projects" },
+  { label: "Experience", hash: "experience" },
+  { label: "About", hash: "about" },
+  { label: "Research", hash: "publications" },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState("light");
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef(null);
   const location = useLocation();
 
-  useEffect(() => {
-    const html = document.documentElement;
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    html.setAttribute("data-theme", savedTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    const html = document.documentElement;
-    const newTheme = theme === "dark" ? "light" : "dark";
-    html.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    setTheme(newTheme);
-  };
+  useEffect(() => { setIsOpen(false); }, [location.pathname, location.hash]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    if (!isOpen) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const closeOnDesktop = (event) => { if (event.matches) setIsOpen(false); };
+    const desktop = window.matchMedia("(min-width: 900px)");
+    document.addEventListener("keydown", closeOnEscape);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [isOpen]);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="container nav-container">
-        <Link to="/" className="navbar-logo">
-          <span className="logo-icon">𝗔</span>
-          <span className="logo-text">Abdullahi</span>
+    <header id="top" className="site-header">
+      <nav className="container nav-container" aria-label="Main navigation">
+        <Link to="/" className="brand" aria-label="Abdullahi Ahmad, home" onClick={() => setIsOpen(false)}>
+          <span className="brand-mark" aria-hidden="true">aa.</span>
+          <span className="brand-name">Abdullahi Ahmad</span>
         </Link>
-        <div className="nav-center">
-          {location.pathname === "/" && (
-            <ul className="nav-links">
-              <li>
-                <a href="#about" className="nav-link">
-                  About
-                </a>
+        <button type="button" className="nav-toggle" ref={toggleRef} aria-expanded={isOpen} aria-controls="main-navigation" onClick={() => setIsOpen((open) => !open)}>
+          <span>{isOpen ? "Close" : "Menu"}</span><span aria-hidden="true">{isOpen ? "×" : "+"}</span>
+        </button>
+        <div id="main-navigation" className={`nav-menu${isOpen ? " is-open" : ""}`}>
+          <ul className="nav-links">
+            {navigation.map(({ label, hash }) => (
+              <li key={hash}>
+                <Link className="nav-link" to={`/#${hash}`} aria-current={location.pathname === "/" && location.hash === `#${hash}` ? "location" : undefined} onClick={() => setIsOpen(false)}>{label}</Link>
               </li>
-              <li>
-                <a href="#skills" className="nav-link">
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a href="#experience" className="nav-link">
-                  Experience
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="nav-link">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="#notes" className="nav-link">
-                  Notes
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="nav-link">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          )}
+            ))}
+          </ul>
+          <div className="nav-actions">
+            <a className="resume-link" href={cvUrl} download={profile.cvFilename} onClick={() => setIsOpen(false)}>Download CV <span aria-hidden="true">↓</span></a>
+            <Link className="button button-small" to="/#contact" onClick={() => setIsOpen(false)}>Let’s talk <span aria-hidden="true">↗</span></Link>
+          </div>
         </div>
-        <div className="nav-right">
-          <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle Dark Mode"
-            title={theme === "dark" ? "Light Mode" : "Dark Mode"}
-          >
-            <i className={`fas fa-${theme === "dark" ? "sun" : "moon"}`}></i>
-          </button>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

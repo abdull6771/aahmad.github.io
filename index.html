@@ -1,36 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abdullahi Ahmad | AI Research Engineer</title>
-    <meta
-      name="description"
-      content="Portfolio of Abdullahi Ahmad, an AI Research Engineer and Machine Learning Specialist specializing in RAG, LLMs, and Computer Vision."
-    />
+    <meta name="theme-color" content="#f7f7f0" />
+    <title>Abdullahi Ahmad — Machine Learning Engineer &amp; AI Researcher</title>
+    <meta name="description" content="Abdullahi Ahmad is a Machine Learning Engineer at TerraHaptix in Abuja. Explore his work in autonomous robotics, agentic AI, RAG, and low-resource NLP research." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://aahmad.github.io/" />
-    <meta
-      property="og:title"
-      content="Abdullahi Ahmad | AI Research Engineer"
-    />
-    <meta
-      property="og:description"
-      content="Specializing in RAG, LLMs, and Computer Vision. View my portfolio and projects."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
+    <meta property="og:url" content="__SITE_URL__" />
+    <meta property="og:title" content="Abdullahi Ahmad — Machine Learning Engineer &amp; AI Researcher" />
+    <meta property="og:description" content="Machine Learning Engineer at TerraHaptix in Abuja, working across autonomous robotics, agentic AI, RAG, and low-resource NLP research." />
+    <meta property="og:locale" content="en_NG" />
+    <meta property="og:image" content="__SITE_URL__portrait.webp" />
+    <meta property="og:image:alt" content="Abdullahi Ahmad, machine learning engineer" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="__SITE_URL__" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <main style="max-width:42rem;margin:10vh auto;padding:24px;font:18px/1.7 system-ui,sans-serif">
+        <h1>Abdullahi Ahmad</h1>
+        <p>Machine Learning Engineer at TerraHaptix in Abuja, working across autonomous robotics, agentic AI, and retrieval-augmented generation.</p>
+        <p>Enable JavaScript to explore my projects, or <a href="%BASE_URL%Abdullahi_Ahmad_Curriculum_Vitae.pdf" download="Abdullahi_Ahmad_Curriculum_Vitae.pdf">Download CV</a>.</p>
+        <p><a href="mailto:abdulll8392@gmail.com">Get in touch by email</a> · <a href="https://github.com/abdull6771">GitHub</a></p>
+      </main>
+    </noscript>
+    <script>
+      // Restore only same-site paths redirected by our GitHub Pages 404 document.
+      (function () {
+        var route = new URLSearchParams(window.location.search).get("__portfolio_route");
+        if (!route || route.charAt(0) !== "/" || route.slice(0, 2) === "//") return;
+        try {
+          var target = new URL(route, window.location.origin);
+          var base = "%BASE_URL%";
+          if (target.origin === window.location.origin && target.pathname.indexOf(base) === 0) {
+            window.history.replaceState(null, "", target.pathname + target.search + target.hash);
+          }
+        } catch (error) {
+          // Leave malformed recovery links on the home page.
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

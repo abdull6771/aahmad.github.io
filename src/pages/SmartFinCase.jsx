@@ -1,129 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SystemDiagram from "../components/SystemDiagram";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 export default function SmartFinCase() {
-  return (
-    <>
-      <nav className="navbar" style={{ position: "relative", height: "auto" }}>
-        <div
-          className="container nav-container"
-          style={{
-            paddingTop: "20px",
-            paddingBottom: "20px",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            gap: "20px",
-          }}
-        >
-          <Link to="/" className="back-link">
-            <i className="fas fa-arrow-left"></i> Back to Portfolio
-          </Link>
-        </div>
-      </nav>
-
-      <main className="container">
+  return <>
+    <main id="main-content" tabIndex={-1}>
+      <article className="case-study container">
+        <Link to="/#projects" className="text-link case-back"><span aria-hidden="true">←</span> Back to selected work</Link>
         <header className="case-header">
-          <h1 className="case-title">SmartFin Analytics</h1>
-          <p className="case-subtitle">
-            Multi-Agent Financial Analysis System using LangGraph
-          </p>
+          <p className="eyebrow">Project archive / AI agents</p>
+          <h1>SmartFin<br /><em>Analytics.</em></h1>
+          <p className="case-deck">A multi-agent workflow that connects financial data collection, anomaly detection, forecasting, and reporting.</p>
         </header>
-
-        <div className="meta-grid">
-          <div className="meta-item">
-            <h4>Role</h4>
-            <p>Lead AI Engineer</p>
-          </div>
-          <div className="meta-item">
-            <h4>Timeline</h4>
-            <p>Sept 2025 (4 Weeks)</p>
-          </div>
-          <div className="meta-item">
-            <h4>Tech Stack</h4>
-            <p>LangGraph, Python, Flask</p>
-          </div>
-          <div className="meta-item">
-            <h4>Outcome</h4>
-            <p>Automated Risk Analysis</p>
-          </div>
-        </div>
-
-        <section className="content-section">
-          <h2>The Challenge</h2>
-          <p>
-            Financial analysts spend hours manually aggregating data from
-            various sources to assess risk and detect fraud. The goal was to
-            automate this workflow using a Multi-Agent System that could
-            autonomously gather data, analyze patterns, and generate reports.
-          </p>
+        <dl className="case-meta">
+          <div><dt>Contribution</dt><dd>Multi-agent workflow design</dd></div>
+          <div><dt>Interface</dt><dd>Flask · Tailwind CSS · Plotly</dd></div>
+          <div><dt>Focus</dt><dd>Financial analysis & AI agents</dd></div>
+          <div><dt>Core stack</dt><dd>Python · LangGraph · Flask</dd></div>
+        </dl>
+        <div className="case-overview"><SystemDiagram /><div><p className="eyebrow">The challenge</p><h2>Connect the steps.<br />Keep the context.</h2><p>Financial analysis can involve manually gathering data from different sources, checking for unusual patterns, and assembling a report. SmartFin brings those steps into one workflow.</p><p>I designed the system around specialized agents, giving data collection, analysis, forecasting, and reporting a defined role.</p></div></div>
+        <section className="case-section" aria-labelledby="approach-title">
+          <div><p className="eyebrow">01 / Technical approach</p><h2 id="approach-title">One workflow.<br />Four responsibilities.</h2></div>
+          <ol className="case-steps">
+            <li><span className="step-number">01</span><div><h3>Collect & prepare</h3><p>Bring financial data from CSV files, JSON, and APIs into the workflow. A dedicated collection agent prepares the inputs for analysis.</p></div></li>
+            <li><span className="step-number">02</span><div><h3>Look for unusual patterns</h3><p>Use Isolation Forest to detect anomalies and surface potential risk for review. An anomaly is a signal to investigate, rather than proof of fraud.</p></div></li>
+            <li><span className="step-number">03</span><div><h3>Forecast financial trends</h3><p>Use Prophet for time-series forecasting. LangGraph coordinates the agents so the analytical outputs can feed into the reporting stage.</p></div></li>
+            <li><span className="step-number">04</span><div><h3>Make the findings usable</h3><p>Present results through a Flask interface with Tailwind CSS and interactive Plotly charts. The reporting agent brings findings together in a natural-language report.</p></div></li>
+          </ol>
         </section>
-
-        <section className="content-section">
-          <h2>The Solution</h2>
-          <p>
-            I designed <strong>SmartFin Analytics</strong>, a system powered by
-            <strong> LangGraph</strong> that orchestrates multiple AI agents.
-            Each agent has a specific role:
-          </p>
-          <ul>
-            <li>
-              <strong>Data Collector Agent:</strong> Scrapes and aggregates
-              financial data.
-            </li>
-            <li>
-              <strong>Analysis Agent:</strong> Uses
-              <strong> Isolation Forest</strong> for anomaly detection to flag
-              potential fraud.
-            </li>
-            <li>
-              <strong>Forecasting Agent:</strong> Utilizes
-              <strong> Prophet</strong> for time-series forecasting of financial
-              trends.
-            </li>
-            <li>
-              <strong>Reporting Agent:</strong> Synthesizes findings into a
-              natural language report.
-            </li>
-          </ul>
-          <p>
-            The system is wrapped in a responsive <strong>Flask</strong> web
-            interface with <strong>Tailwind CSS</strong> and interactive
-            <strong> Plotly</strong> visualizations for the end-user.
-          </p>
+        <section className="case-section case-outcome" aria-labelledby="outcome-title">
+          <div><p className="eyebrow">02 / Deliverable</p><h2 id="outcome-title">Analysis people<br />can work with.</h2></div>
+          <div className="case-outcome-copy"><p>The implementation combines automated analysis with a web interface for reviewing the results.</p><ul className="outcome-list"><li>Interactive visualizations of financial data</li><li>Risk flags produced by anomaly detection</li><li>Time-series forecasts using Prophet</li><li>Downloadable PDF reports that consolidate findings</li></ul><p className="evidence-note">This case study describes the implemented workflow. No benchmark or measured business impact is claimed.</p></div>
         </section>
-
-        <section className="content-section">
-          <h2>Key Technologies</h2>
-          <div className="tech-stack">
-            <span className="tech-badge">LangGraph</span>
-            <span className="tech-badge">LangChain</span>
-            <span className="tech-badge">OpenAI API</span>
-            <span className="tech-badge">Python</span>
-            <span className="tech-badge">Flask</span>
-            <span className="tech-badge">Scikit-Learn</span>
-            <span className="tech-badge">Prophet</span>
-            <span className="tech-badge">Tailwind CSS</span>
-          </div>
-        </section>
-
-        <div className="cta-section">
-          <h2>Ready to build something similar?</h2>
-          <br />
-          <Link
-            to="/#contact"
-            className="btn"
-            style={{
-              backgroundColor: "var(--text-main)",
-              color: "var(--bg-body)",
-            }}
-          >
-            Contact Me
-          </Link>
-        </div>
-      </main>
-
-      <Footer />
-    </>
-  );
+        <section className="case-stack" aria-labelledby="stack-title"><h2 id="stack-title">Tools behind the work</h2><ul className="tech-tags"><li>Python</li><li>LangGraph</li><li>LangChain</li><li>OpenAI API</li><li>Scikit-learn</li><li>Prophet</li><li>Flask</li><li>Plotly</li><li>Tailwind CSS</li></ul></section>
+      </article>
+      <Contact />
+    </main>
+    <Footer />
+  </>;
 }

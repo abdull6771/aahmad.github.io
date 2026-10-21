@@ -1,93 +1,24 @@
-import React from "react";
+﻿import React from "react";
+import { cvUrl, profile } from "../data/profile";
 
 export default function About() {
-  const researchInterests = [
-    { icon: "fas fa-brain", label: "Machine Learning" },
-    { icon: "fas fa-link-chain", label: "RAG Systems" },
-    { icon: "fas fa-robot", label: "Large Language Models" },
-  ];
-
   return (
-    <section id="about" className="section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-subtitle">Professional Background</span>
-          <h2 className="section-title">About Me</h2>
+    <section id="about" className="section" aria-labelledby="about-heading">
+      <div className="container section-split">
+        <div className="section-intro">
+          <p className="eyebrow">03 / Background</p>
+          <h2 id="about-heading">An engineer’s curiosity. A researcher’s rigor.</h2>
         </div>
-
-        <div className="about-content">
-          {/* Main Bio */}
-          <div className="about-main">
-            <div className="about-card education-card">
-              <div className="card-icon">
-                <i className="fas fa-graduation-cap"></i>
-              </div>
-              <div className="card-content">
-                <h3>Education & Experience</h3>
-                <p>
-                  Computer Engineer with a{" "}
-                  <span className="highlight-accent">Second Class Upper</span>{" "}
-                  degree from
-                  <span className="highlight-accent">
-                    {" "}
-                    Ahmadu Bello University
-                  </span>
-                  , Zaria, Nigeria.
-                  <span className="highlight-accent"> 4+ years</span> of
-                  hands-on experience in Machine Learning and Generative AI.
-                </p>
-              </div>
-            </div>
-
-            <div className="about-card achievement-card">
-              <div className="card-icon achievement">
-                <i className="fas fa-trophy"></i>
-              </div>
-              <div className="card-content">
-                <h3>Key Achievement</h3>
-                <p>
-                  <span className="highlight-achievement">
-                    Winner of the 2023 Global Huawei ICT Competition
-                  </span>
-                  . Gained hands-on experience in configuring CCTV, biometric
-                  systems, and enterprise networking equipment.
-                </p>
-              </div>
-            </div>
-
-            <div className="about-card expertise-card">
-              <div className="card-icon">
-                <i className="fas fa-lightbulb"></i>
-              </div>
-              <div className="card-content">
-                <h3>Passion & Focus</h3>
-                <p>
-                  Motivated to contribute to{" "}
-                  <span className="highlight-accent">
-                    cutting-edge research
-                  </span>{" "}
-                  in AI and
-                  <span className="highlight-accent"> Computer Vision</span>.
-                  Building scalable, production-ready intelligent systems.
-                </p>
-              </div>
-            </div>
+        <div className="about-copy">
+          <p className="about-lead">I’m Abdullahi Ahmad, a machine learning engineer and early-career AI researcher with over four years of experience designing, evaluating, and deploying AI systems.</p>
+          <p>At TerraHaptix, I work on models for autonomous robotics, with a focus on computer vision, model optimization, and reliability under real-time constraints. My earlier work includes video-based behaviour recognition and natural-language querying of time-series data.</p>
+          <p>My research connects agentic AI, retrieval-augmented generation, and network telemetry. I’m also a co-author of an accepted AIATSI 2025 paper benchmarking the performance and efficiency of transformer models for code-mixed Hausa sentiment analysis.</p>
+          <p>I studied Computer Engineering at Ahmadu Bello University and won the Grand Prize in the Innovation/AI track of the 2023 Huawei ICT Competition Global Final. Through teaching and community workshops, I help others turn ideas in AI and robotics into working projects.</p>
+          <div className="research-interests">
+            <h3>Questions I’m exploring</h3>
+            <p>AI for cybersecurity and behavioural threat analytics; graph representation learning and knowledge graphs; network and IoT security; and NLP for low-resource languages.</p>
           </div>
-
-          {/* Research Interests */}
-          <div className="research-interests-section">
-            <h3 className="interests-title">Research Interests</h3>
-            <div className="interests-grid">
-              {researchInterests.map((interest, idx) => (
-                <div key={idx} className="interest-item">
-                  <div className="interest-icon">
-                    <i className={interest.icon}></i>
-                  </div>
-                  <span className="interest-label">{interest.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <a className="text-link" href={cvUrl} download={profile.cvFilename}>Download CV <span aria-hidden="true">↓</span><span className="link-detail">PDF · 4 pages</span></a>
         </div>
       </div>
     </section>

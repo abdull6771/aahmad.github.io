@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Finding your page — Abdullahi Ahmad</title>
+    <style>
+      body { margin: 0; padding: 12vh 8vw; background: #f5f3ec; color: #242b38; font: 18px/1.6 system-ui, sans-serif; }
+      main { max-width: 42rem; margin: auto; } h1 { font-family: Georgia, serif; font-weight: 400; } a { color: #435c8b; text-underline-offset: .2em; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Let’s find your page.</h1>
+      <p>If you aren’t redirected, <a id="home-link" href="/">return to the portfolio</a>.</p>
+    </main>
+    <script>
+      (function () {
+        var base = "__BASE_PATH__";
+        if (base.charAt(0) !== "/") base = "/";
+        document.getElementById("home-link").href = base;
+        var current = window.location;
+        if (current.pathname.indexOf(base) !== 0 || current.pathname === base || current.pathname === base + "index.html") return;
+        var destination = new URL(base, current.origin);
+        destination.searchParams.set("__portfolio_route", current.pathname + current.search + current.hash);
+        window.location.replace(destination.pathname + destination.search);
+      })();
+    </script>
+  </body>
+</html>
